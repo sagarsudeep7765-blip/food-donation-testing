@@ -1,110 +1,99 @@
-# food-donation-testing
-Automated API and Functional Testing of a Food Donation and Redistribution Platform
-1. Project Description
+# Automated API and Functional Testing of a Food Donation and Redistribution Platform
 
-This project focuses on Automated API and Functional Testing of a Food Donation and Redistribution Platform. The system helps donors share surplus food with people or organizations in need.
+## Project overview
+This repository contains starter automated tests using Robot Framework for a Food Donation and Redistribution Platform. It includes API test examples using RequestsLibrary and browser-based functional test examples using SeleniumLibrary.
 
-The project verifies the functionality, reliability, and correctness of the platform through automated testing.
+**Important:** These are starter templates. The application URL, API routes, request fields, page paths, and element locators must be changed to match the actual application. The tests cannot fully verify business workflows until the application and its API contract are available.
 
-2. Objectives
+## Tools
+- Python 3
+- Robot Framework
+- RequestsLibrary (API testing)
+- SeleniumLibrary (browser functional testing)
+- Google Chrome and a compatible ChromeDriver/Selenium Manager setup
+- Git and GitHub
 
-To test user registration and login functionality.
+## Project structure
+```text
+food-donation-testing/
+├── tests/
+│   ├── api_testing.robot
+│   └── functional_testing.robot
+├── resources/
+├── testdata/
+├── requirements.txt
+├── .gitignore
+└── README.md
+```
 
-To verify food donation operations.
+## Prerequisites
+Install Python 3 and Google Chrome. Open a terminal in the project folder.
 
-To test food request and redistribution features.
+## Installation
+Create and activate a virtual environment (recommended):
 
-To validate API responses and HTTP status codes.
+Windows:
+```bash
+python -m venv .venv
+.venv\\Scripts\\activate
+```
 
-To automate functional test cases.
+macOS/Linux:
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
 
-To identify errors and improve software quality.
-3. Technologies and Tools Used
+Install dependencies:
+```bash
+pip install -r requirements.txt
+```
 
-Programming Language: Python
+## Configure the application
+Start your food donation application separately. The sample files currently assume:
+- Application/API base URL: `http://127.0.0.1:5000`
+- Health endpoint: `/health`
+- Donations endpoint: `/api/donations`
+- Login page: `/login`
 
-Automation Testing Framework: Robot Framework
+Replace these examples with the actual host, paths, payload fields, and UI element locators used by your application. Do not commit real passwords, API keys, or private tokens to GitHub.
 
-API Testing: Robot Framework RequestsLibrary
+## Run API tests
+```bash
+robot tests/api_testing.robot
+```
 
-Functional Testing: Robot Framework
+## Run browser functional tests
+Make sure the application is running, then execute:
+```bash
+robot tests/functional_testing.robot
+```
 
-API Testing Tool: Postman (if used)
-
-Code Editor: Visual Studio Code
-
-Version Control: Git and GitHub
-
-4. Prerequisites
-
-Install the following software:
-
-Python 3
-
-Visual Studio Code
-
-Git
-
-Robot Framework
-
-Robot Framework RequestsLibrary
-
-Browser library or SeleniumLibrary (depending on your implementation)
-
-5. Installation Procedure
-
-Step 1: Clone the Repository
-
-git clone https://github.com/sagarsudeep7765-blip/food-donation-testing.git
-
-Step 2: Open the Project Folder
-
-cd food-donation-testing
-
-Step 3: Install Robot Framework
-
-pip install robotframework
-
-Step 4: Install RequestsLibrary for API Testing
-
-pip install robotframework-requests
-
-Step 5: Install SeleniumLibrary for Browser Testing (if used)
-
-pip install robotframework-seleniumlibrary
-
-6. Running Automated Tests
-
-Execute All Robot Framework Test Cases
-
+## Run all tests
+```bash
 robot tests/
+```
 
-Execute a Specific Test File
+## Test reports
+Robot Framework generates these files in the current directory by default:
+- `report.html` — summary report
+- `log.html` — detailed execution log
+- `output.xml` — machine-readable test results
 
-robot tests/login.robot
+To store results in a separate folder:
+```bash
+robot --outputdir results tests/
+```
 
-Generate Test Reports
+## Updating the starter tests
+1. Confirm the real API base URL and endpoint paths with your application.
+2. Update `${API_BASE_URL}` in `tests/api_testing.robot`.
+3. Update the JSON fields and expected HTTP status codes for the real API.
+4. Update `${APP_URL}`, `${LOGIN_PATH}`, and Selenium locators in `tests/functional_testing.robot`.
+5. Run the tests and inspect `log.html` and `report.html`.
 
-Robot Framework automatically generates:
+## Current limitations
+This starter repository does not include the food donation application itself, real API endpoint definitions, login credentials, or verified UI selectors. Therefore, the sample checks are scaffolding and must be adapted and executed against the actual application before reporting test results.
 
-report.html
-
-log.html
-
-output.xml
-
-These files contain test execution results and details about passed and failed test cases.
-
-7. API Testing Using Robot Framework
-
-Open the project in Visual Studio Code.
-
-Open the API test file with the .robot extension.
-
-Configure the API endpoint and required test data.
-
-Execute the test using the Robot Framework command.
-
-Verify the API response and status code.
-
-Review the generated test report.
+## Project
+**Title:** Automated API and Functional Testing of a Food Donation and Redistribution Platform
