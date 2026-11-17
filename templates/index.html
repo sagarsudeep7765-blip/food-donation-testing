@@ -1,0 +1,7 @@
+<!doctype html><html><head><title>FoodShare Home</title></head><body>
+<h1>Food Donation and Redistribution Platform</h1>
+<p>Share surplus food with people and communities who need it.</p>
+<nav><a href="/register">Register</a> | <a href="/login">Login</a> | <a href="/donate">Donate Food</a></nav>
+{% with messages = get_flashed_messages() %}{% for m in messages %}<p role="status">{{ m }}</p>{% endfor %}{% endwith %}
+<h2>Available Donations</h2><ul id="donation-list">{% for d in donations %}<li>{{ d.food_name }} - {{ d.quantity }} - {{ d.location }}</li>{% else %}<li>No donations yet</li>{% endfor %}</ul>
+</body></html>
